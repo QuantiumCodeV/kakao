@@ -12,7 +12,7 @@ $password = $_POST['password'];
 // Проверка имени пользователя и пароля
 if ($username === $USERNAME_DEFAULT && $password === $PASSWORD_DEFAULT) {
     setcookie("admin", true);
-    
+    Header("Location: admin.php");
 } else {
     echo "Неверное имя пользователя или пароль.";
 }

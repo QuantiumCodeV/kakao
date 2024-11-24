@@ -1433,7 +1433,7 @@ $link = $links[$os] ?? '';
                                             data-v-37d8c9b3=""
                                             data-v-0cb110a9=""
                                             class="item_link"
-                                            >For Windows 7, 8, 8.1</span
+                                            >For MacOS</span
                                           ><svg
                                             data-v-61c8860e=""
                                             data-v-37d8c9b3=""

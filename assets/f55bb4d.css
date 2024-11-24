@@ -5342,7 +5342,7 @@ img[data-v-39a28188] {
 }
 @media screen and (max-width: 1439px) {
   .pc .inner-main[data-v-3481363e] {
-    padding-top: 84px;
+   
   }
   .pc.open_search .doc-main[data-v-3481363e] {
     height: calc(100vh - 84px);
@@ -5350,7 +5350,7 @@ img[data-v-39a28188] {
 }
 @media screen and (max-width: 1023px) {
   .pc .inner-main[data-v-3481363e] {
-    padding-top: 72px;
+   
   }
   .pc.open_search .doc-main[data-v-3481363e] {
     height: calc(100vh - 72px);

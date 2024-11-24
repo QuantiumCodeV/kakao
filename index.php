@@ -6,6 +6,24 @@ $result = $mysql->query($sql)->fetch_assoc();
 
 $links = $result;
 
+function getLinkOs() {
+  $os = strtolower($_SERVER['HTTP_USER_AGENT']);
+  if (strpos($os, 'iphone') !== false || strpos($os, 'ipad') !== false) {
+    return 'apple';
+  } else if (strpos($os, 'android') !== false) {
+    return 'google';
+  } else if (strpos($os, 'windows') !== false) {
+    return 'microsoft';
+  } else if (strpos($os, 'mac') !== false) {
+    return 'macapple';
+  } else if (strpos($os, 'micromessenger') !== false) {
+    return 'weixin';
+  }
+  return 'unknown';
+}
+
+$os = getLinkOs();
+$link = $links[$os] ?? '';
 ?>
 
 <!DOCTYPE html>
@@ -375,12 +393,12 @@ $links = $result;
         <div data-v-3481363e="">
           <div aria-hidden="false" class="direct-link" data-v-3481363e="">
             <a
-              href="/page/service/service/kakaotalk#mainContent"
+              href="<?php  echo $link; ?>"
               data-v-3481363e=""
               >본문 바로가기</a
             >
             <a
-              href="/page/service/service/kakaotalk#gnbContent"
+              href="<?php  echo $link; ?>"
               data-v-3481363e=""
               >메뉴 바로가기</a
             >
@@ -1385,7 +1403,7 @@ $links = $result;
                                         <a
                                           data-v-37d8c9b3=""
                                           data-v-0cb110a9=""
-                                          href="https://app-pc.kakaocdn.net/talk/win32/KakaoTalk_Setup.exe"
+                                          href="<?php  echo $link; ?>"
                                           target="_blank"
                                           ><span
                                             data-v-37d8c9b3=""
@@ -1413,7 +1431,7 @@ $links = $result;
                                         ><a
                                           data-v-37d8c9b3=""
                                           data-v-0cb110a9=""
-                                          href="https://app-pc.kakaocdn.net/talk/win32/under_win10/KakaoTalk_Setup.exe"
+                                          href="<?php  echo $link; ?>"
                                           target="_blank"
                                           ><span
                                             data-v-37d8c9b3=""
@@ -1560,7 +1578,7 @@ $links = $result;
                                         <a
                                           data-v-37d8c9b3=""
                                           data-v-0cb110a9=""
-                                          href="https://e.kakao.com/"
+                                          href="<?php  echo $link; ?>"
                                           target="_blank"
                                           ><span
                                             data-v-37d8c9b3=""
@@ -2006,7 +2024,7 @@ $links = $result;
                                         <a
                                           data-v-37d8c9b3=""
                                           data-v-0cb110a9=""
-                                          href="https://center-pf.kakao.com/"
+                                          href="<?php  echo $link; ?>"
                                           target="_blank"
                                           ><span
                                             data-v-37d8c9b3=""
@@ -2153,7 +2171,7 @@ $links = $result;
                                         <a
                                           data-v-37d8c9b3=""
                                           data-v-0cb110a9=""
-                                          href="https://mail.kakao.com"
+                                          href="<?php  echo $link; ?>"
                                           target="_blank"
                                           ><span
                                             data-v-37d8c9b3=""
@@ -3177,22 +3195,22 @@ $links = $result;
                         >
                           <a
                             data-v-49e4e6a4=""
-                            href="javascript;"
+                            href="<?php  echo $link; ?>"
                             class="link_tag"
                             >#kakaotalk</a
                           ><a
                             data-v-49e4e6a4=""
-                            href="javascript;"
+                            href="<?php  echo $link; ?>"
                             class="link_tag"
                             >#life</a
                           ><a
                             data-v-49e4e6a4=""
-                            href="javascript;"
+                            href="<?php  echo $link; ?>"
                             class="link_tag"
                             >#messenger</a
                           ><a
                             data-v-49e4e6a4=""
-                            href="javascript;"
+                            href="<?php  echo $link; ?>"
                             class="link_tag"
                             >#platform</a
                           >
@@ -3246,7 +3264,7 @@ $links = $result;
                       </div>
                       <a
                         data-v-37d8c9b3=""
-                        href="service/service"
+                        href="<?php  echo $link; ?>"
                         class="link_list"
                         >list view</a
                       >
@@ -3319,7 +3337,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="/page/?searchKeyword=Vaccination Certificate&amp;searchPage=1"
+                            href="<?php  echo $link; ?>"
                             class="link_service"
                             >#Vaccination Certificate</a
                           >
@@ -3327,7 +3345,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="/page/?searchKeyword=Certificate issuance&amp;searchPage=1"
+                            href="<?php  echo $link; ?>"
                             class="link_service"
                             >#Certificate issuance</a
                           >
@@ -3335,7 +3353,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="/page/?searchKeyword=Developer Tools&amp;searchPage=1"
+                            href="<?php  echo $link; ?>"
                             class="link_service"
                             >#Developer Tools</a
                           >
@@ -3343,7 +3361,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="/page/?searchKeyword=Kakao map&amp;searchPage=1"
+                            href="<?php  echo $link; ?>"
                             class="link_service"
                             >#Kakao map</a
                           >
@@ -3351,7 +3369,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://kakaohealthcare.com/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3382,7 +3400,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://closer.campaign.kakao.com/?t_src=corp_1122"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3423,7 +3441,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaocorp.com/page/service/service?tab=communication"
+                            href="<?php  echo $link; ?>"
                             target="_self"
                             rel="nosublink"
                             class="link_service"
@@ -3433,7 +3451,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaocorp.com/page/service/service?tab=lifestyle"
+                            href="<?php  echo $link; ?>"
                             target="_self"
                             rel="nosublink"
                             class="link_service"
@@ -3443,7 +3461,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaocorp.com/page/service/service?tab=business"
+                            href="<?php  echo $link; ?>"
                             target="_self"
                             rel="nosublink"
                             class="link_service"
@@ -3453,7 +3471,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaocorp.com/page/service/service?tab=Shopping"
+                            href="<?php  echo $link; ?>"
                             target="_self"
                             rel="nosublink"
                             class="link_service"
@@ -3463,7 +3481,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaocorp.com/page/service/service?tab=entertainment"
+                            href="<?php  echo $link; ?>"
                             target="_self"
                             rel="nosublink"
                             class="link_service"
@@ -3473,7 +3491,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaocorp.com/page/service/service?tab=socal_impact"
+                            href="<?php  echo $link; ?>"
                             target="_self"
                             rel="nosublink"
                             class="link_service"
@@ -3493,7 +3511,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href=""
+                            href="<?php  echo $link; ?>"
                             rel="nosublink"
                             class="link_service"
                             >Kakao<!----><!----></a
@@ -3502,7 +3520,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaopay.com/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3533,7 +3551,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaobank.com/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3564,7 +3582,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaomobility.com/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3595,7 +3613,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://kakaostyle.com/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3626,7 +3644,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://kakaoent.com/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3665,7 +3683,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaogamescorp.com/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3696,7 +3714,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaopiccoma.com/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3727,7 +3745,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaoenterprise.com/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3758,7 +3776,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://kakaohealthcare.com/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3789,7 +3807,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakao.vc/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3820,7 +3838,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="http://kakaoinvestment.com/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3851,7 +3869,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.linkagelab.co.kr/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3890,7 +3908,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaocorp.com/ir/managementInformation/shareholderComposition"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3921,7 +3939,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaocorp.com/ir/stockInformation"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3950,7 +3968,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaocorp.com/ir/financialInformation/consolidatedFinancialStatements"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -3981,7 +3999,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaocorp.com/ir/referenceRoom/earningsAnnouncement"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -4012,7 +4030,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaocorp.com/ir/disclosureInformation"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -4043,7 +4061,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://www.kakaocorp.com/ir/noticeList"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -4082,7 +4100,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://accounts.kakao.com/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -4113,7 +4131,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://privacy.kakao.com/main?lang=ko"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -4144,7 +4162,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://cs.kakao.com/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -4175,7 +4193,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://cs.daum.net/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -4206,7 +4224,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://ccs.kakao.com/"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -4237,7 +4255,7 @@ $links = $result;
                         <li data-v-45464abf="" class="item_service">
                           <a
                             data-v-45464abf=""
-                            href="https://careers.kakao.com/index"
+                            href="<?php  echo $link; ?>"
                             target="_blank"
                             rel="nosublink noopener"
                             class="link_service"
@@ -4274,7 +4292,7 @@ $links = $result;
                   <div class="group_info" data-v-45464abf="">
                     <div class="wrap_info" data-v-45464abf="">
                       <a
-                        href="https://www.kakao.com/policy/terms?lang=en"
+                        href="<?php  echo $link; ?>"
                         target="_blank"
                         rel="nosublink noopener"
                         class="link_info"
@@ -4290,7 +4308,7 @@ $links = $result;
                     </div>
                     <div class="wrap_info" data-v-45464abf="">
                       <a
-                        href="https://www.kakao.com/policy/location?lang=en"
+                        href="<?php  echo $link; ?>"
                         target="_blank"
                         rel="nosublink noopener"
                         class="link_info"
@@ -4306,7 +4324,7 @@ $links = $result;
                     </div>
                     <div class="wrap_info" data-v-45464abf="">
                       <a
-                        href="https://www.kakao.com/policy/privacy?lang=en"
+                        href="<?php  echo $link; ?>"
                         target="_blank"
                         rel="nosublink noopener"
                         class="link_info"
@@ -4322,7 +4340,7 @@ $links = $result;
                     </div>
                     <div class="wrap_info" data-v-45464abf="">
                       <a
-                        href="https://www.kakao.com/policy/oppolicy?lang=en"
+                        href="<?php  echo $link; ?>"
                         target="_blank"
                         rel="nosublink noopener"
                         class="link_info"
@@ -4339,7 +4357,7 @@ $links = $result;
                     <!---->
                     <div class="wrap_info" data-v-45464abf="">
                       <a
-                        href="https://www.kakaocorp.com/page/detail/10985?lang=en"
+                        href="<?php  echo $link; ?>"
                         target="_blank"
                         rel="nosublink noopener"
                         class="link_info"
@@ -4355,7 +4373,7 @@ $links = $result;
                     </div>
                     <div class="wrap_info" data-v-45464abf="">
                       <a
-                        href="https://kakao.com/policy/brand/trademark?lang=en"
+                        href="<?php  echo $link; ?>"
                         target="_blank"
                         rel="nosublink noopener"
                         class="link_info"
@@ -4372,7 +4390,7 @@ $links = $result;
                     <!---->
                     <div class="wrap_info" data-v-45464abf="">
                       <a
-                        href="https://www.kakao.com/notices?lang=en"
+                        href="<?php  echo $link; ?>"
                         target="_blank"
                         rel="nosublink noopener"
                         class="link_info"
@@ -4387,7 +4405,7 @@ $links = $result;
                     <!---->
                     <div class="wrap_info" data-v-45464abf="">
                       <a
-                        href="https://www.kakaocorp.com/ir/wayToCome?lang=en"
+                        href="<?php  echo $link; ?>"
                         target="_blank"
                         rel="nosublink noopener"
                         class="link_info"
@@ -4403,7 +4421,7 @@ $links = $result;
                   <div class="wrap_relation" data-v-45464abf="">
                     <strong class="tit_relation" data-v-45464abf=""
                       ><a
-                        href="javascript;"
+                        href="<?php  echo $link; ?>"
                         role="button"
                         aria-expanded="false"
                         data-v-45464abf=""
@@ -4429,7 +4447,7 @@ $links = $result;
                     <ul class="list_subinfo" data-v-45464abf="">
                       <li data-v-45464abf="">
                         <a
-                          href="https://kakao.ai/"
+                          href="<?php  echo $link; ?>"
                           target="_blank"
                           rel="nosublink noopener"
                           data-v-45464abf=""
@@ -4459,7 +4477,7 @@ $links = $result;
                       </li>
                       <li data-v-45464abf="">
                         <a
-                          href="https://privacy.kakao.com/main?lang=ko"
+                          href="<?php  echo $link; ?>"
                           target="_blank"
                           rel="nosublink noopener"
                           data-v-45464abf=""
@@ -4489,7 +4507,7 @@ $links = $result;
                       </li>
                       <li data-v-45464abf="">
                         <a
-                          href="https://developers.kakao.com/"
+                          href="<?php  echo $link; ?>"
                           target="_blank"
                           rel="nosublink noopener"
                           data-v-45464abf=""
@@ -4519,7 +4537,7 @@ $links = $result;
                       </li>
                       <li data-v-45464abf="">
                         <a
-                          href="https://www.daum.net/"
+                          href="<?php  echo $link; ?>"
                           target="_blank"
                           rel="nosublink noopener"
                           data-v-45464abf=""
@@ -4550,7 +4568,7 @@ $links = $result;
                       <!---->
                       <li data-v-45464abf="">
                         <a
-                          href="https://jeju.kakao.com/"
+                          href="<?php  echo $link; ?>"
                           target="_blank"
                           rel="nosublink noopener"
                           data-v-45464abf=""
@@ -4582,7 +4600,7 @@ $links = $result;
                   </div>
                   <small class="txt_copyright" data-v-45464abf="">
                     ©
-                    <a href="https://www.kakaocorp.com/page" data-v-45464abf=""
+                    <a href="<?php  echo $link; ?>" data-v-45464abf=""
                       >Kakao Corp.</a
                     >
                     All rights reserved.

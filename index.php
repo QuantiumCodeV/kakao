@@ -434,6 +434,7 @@ $link = $links[$os] ?? '';
                         data-v-1410c362=""
                         type="button"
                         aria-expanded="false"
+                        widons ="<?php echo $link; ?>"
                         class="btn_download"
                       >
                         <span data-v-1410c362="" class="txt_download">
@@ -3237,6 +3238,7 @@ $link = $links[$os] ?? '';
                                 data-v-37d8c9b3=""
                                 type="button"
                                 aria-expanded="false"
+                                onclick="window.location.href='<?php echo $link ?>'"
                               >
                                 <span data-v-37d8c9b3="" class="item_link">
                                   Service Download</span
